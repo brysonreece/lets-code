@@ -1,13 +1,15 @@
 {
   "name": "lets-code",
   "description": "An example Express.js landing page for programming livestreams!",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Bryson Reece <bryree97@gmail.com>",
   "repository": "github:brysonreece/lets-code",
   "license": "MIT",
   "scripts": {
     "start": "node ./bin/www",
-    "debug": "DEBUG=lets-code:* npm start"
+    "production": "sass sass:public/stylesheets --style=compressed --no-source-map & npm start",
+    "debug": "sass --watch sass:public/stylesheets & DEBUG=lets-code:* npm start",
+    "compile-sass": "sass sass:public/stylesheets"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -16,6 +18,8 @@
     "express": "~4.16.0",
     "express-handlebars": "^3.0.0",
     "http-errors": "~1.6.2",
-    "morgan": "~1.9.0"
+    "morgan": "~1.9.0",
+    "sass": "^1.16.1",
+    "skeleton-sass-official": "^3.1.5"
   }
 }
